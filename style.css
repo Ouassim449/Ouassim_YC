@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Kalam", cursive;
+    overflow-x: hidden;
+}
+.site{
+    background-color: #efefef;;
+}
+/* changement du couleur de la selection  */
+::selection{
+    background-color: greenyellow;
+}
+/* fin changement selection */
+/* la partie main */
+/* la partie de slider image */
+.main{
+    position: relative;
+}
+.main .wrapper{
+    width: 100%;
+    height: 500px;
+}
+.main .wrapper-holder{
+    display: grid;
+    grid-template-columns: repeat(4,100%);
+    height: 100%;
+    width: 100%;
+    animation: slider 20s ease-in-out infinite alternate;
+}
+.main #slider-img-1{
+    background-image: url(imgs/arrière\ plan.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.main #slider-img-2{
+    background-image: url(imgs/arrière\ plan\ 2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.main #slider-img-3{
+    background-image: url(imgs/arrière\ plan\ 3.avif);
+    background-position: center;
+    background-size: cover;
+}
+.main #slider-img-4{
+    background-image: url(imgs/arrière\ plan\ 4.jpg);
+    background-position: center;
+    background-size: cover;
+}
+@keyframes slider{
+    0%{transform: translateX(0%);}
+    10%{transform: translateX(0%);}
+    20%{transform: translateX(0%);}
+    30%{transform: translateX(-100%);}
+    40%{transform: translateX(-100%);}
+    50%{transform: translateX(-100%);}
+    60%{transform: translateX(-200%);}
+    70%{transform: translateX(-200%);}
+    80%{transform: translateX(-200%);}
+    90%{transform: translateX(-300%);}
+    100%{transform: translateX(-300%);}
+}
+/*Fin partie slider image*/
+.main::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+/* la partie navigation bar */
+.navbar{
+    display: flex;
+    position: absolute;
+    top: 0;
+    justify-content: space-around;
+    align-items: center;
+    height: 65px;
+    width: 100%;
+    z-index: 3;
+}
+.navbar img{
+    width: 60px;
+    height: 60px;
+}
+.navbar h1{
+    font-size: 20px;
+    color: #fefefe;
+}
+.navbar ul{
+    width: 50%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.navbar .logo{
+    display: flex;
+}
+.menu-bar a{
+    color: #fefefe;
+    text-decoration: none;
+}
+.menu-bar li ::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: greenyellow;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.menu-bar li :hover::after {
+    width: 100%;
+}
+/* la menu burger */
+#ouvre , #ferme , #menuB{
+    display: none;
+}
+/* fin menu burger */
+/* fin navigation bar*/
+.titre{
+    z-index: 1;
+    color: #fefefe;
+    text-align: center;
+    position: absolute;
+    top: 170px;
+    left: 32vw;
+}
+.titre h1 , .titre h4 , .titre h5{
+    transition: 0.2s;
+    cursor: pointer;
+}
+.titre h1:hover , .titre h4:hover , .titre h5:hover{
+    transform: scale(1.1);
+}
+ .menu1{
+    background-color: #31ab60;
+    width: 50%;
+    height: 160px;
+    margin: auto;
+    position: absolute;
+    left: 25%;
+    bottom: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+}
+ .menu1 .menu-icon{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+}
+.menu1 .menu-icon a{
+    text-decoration: none;
+    width: 100%;
+}
+.menu1 .menu-icon a:hover div{
+    color: greenyellow;
+}
+.menu-icon div{
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    margin: 30px 0;
+    border-right: 2px solid #4ee678;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    transition: 0.3s;
+}
+.menu-icon #icon4
+{
+    border-right: none;
+}
+.menu-icon div i{
+    font-size: 40px;
+    cursor: pointer;
+}
+.menu-icon div h4{
+    cursor: pointer;
+}
+/* fin main */
+/* partie des  boites */
+.boite{
+    height: 370px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f3f3f3;
+    padding: 70px 40px;
+}
+/* partie texte intéret  */
+.text-interet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+.text-interet span{
+    height: 1.5px;
+    width: 60%;
+    background-color: gray;
+}
+#interet img{
+    width: 340px;
+    height: 340px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+/* FIN partie texte intéret  */
+/* partie definition général des plantes */
+#plantes img{
+    z-index: 1;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#plantes .text-plantes{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    transition: 0.3s;
+}
+#plantes:hover img{
+    transform: translateX(50%);
+}
+#plantes:hover .text-plantes{
+    transform: translateX(-60%);
+}
+/* FIN partie definition général des plantes */
+.boite div{
+    text-align: center;
+    letter-spacing: 1px;
+}
+.boite div h1{
+    color: #444;
+}
+.boite div p{
+    font-size: 16px;
+}
+/* partie definition herbes monocotylédones dicotylédones */
+#mono , #dico{
+    padding: 100px 0;
+}
+#mono .container-mono , #dico .container-dico{
+    width: 85%;
+    background-color: rgb(54, 153, 54);
+    display: flex;
+    transition: 0.3s;
+    box-shadow: 0 0 5px black;
+}
+#mono .container-mono:hover{
+    box-shadow: 0 0 15px whitesmoke;
+    transform: scale(1.05);
+}
+#dico .container-dico:hover{
+    box-shadow: 0 0 15px whitesmoke;
+    transform: scale(1.05);
+}
+#mono img , #dico img{
+    width: 70%;
+}
+.text-mono , .text-dico{
+    padding: 20px 10px;
+    width: 30%;
+}
+#mono h1 ,#dico h1{
+    color: #f3d5c4;
+    font-size: 18px;
+}
+#mono span , #dico span{
+    font-size: 28px;
+}
+#mono p , #dico p{
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+}
+/* FIN partie definition herbes monocotylédones / dicotylédones */
+
+/* fin boites */
+/* La partie de la différence entre mono et dico */
+/* .difference{
+/* tableau de difference  */
+.tableau{
+    display: flex;
+    justify-content: center;
+}
+table{
+    width: 70%;
+    border-spacing: 0;
+
+}
+table tr ,table th{
+    border: 2px solid white;
+    padding: 15px;
+    letter-spacing: 1px;
+}
+.titre1{
+    font-size: 24px;
+    color: white;
+    text-transform: uppercase;
+}
+.titre1 th{
+    padding: 30px 15px;
+}
+tr:not(.titre1){
+    background-color: #e7e7e7;
+}
+th h3{
+    font-size: 23px;
+    color: #111;
+}
+#titre-mono{
+    background-color: greenyellow;
+}
+#titre-dico{
+    background-color: green;
+}
+tr th p{
+    font-size: 15px;
+    color: #333;
+}
+/* phoyo de racine*/
+.racine{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    padding: 40px 20px;
+    margin-bottom: 50px;
+}
+.racine div{
+    width: 50%;
+    padding: 20px 10px;
+    text-align: center;
+}
+.racine div p{
+    font-size: 22px;
+    color: #187b3e;
+}
+.racine div img{
+    width: 100%;
+    border-radius: 50px;
+}
+/* FIN photo de racine */ 
+/* partie mauvaises adventices */
+.mauv-adv{
+    padding: 20px 10px;
+    text-align: center;
+    color: #222;
+    letter-spacing: 1px;
+    width: 75%;
+    margin: auto;
+    position: relative;
+}
+.mauv-adv h2{
+    font-size: 30px;
+    color: #944;
+}
+
+.first-one::first-letter{
+    font-size: 25px;
+    color: #944;
+}
+/* FIN tableau de difference  */
+/* la partie video  */
+.video{
+    padding: 70px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.video video{
+    width: 90%;
+    height: 450px;
+}
+/* Fin del partie video  */
+/* Fin partie de la différence */
+/* la partie footer */
+footer{
+    background-color: #222;
+    height: 230px;
+    color: white;
+
+}
+.footer-haut{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-haut #droite{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+}
+.footer-haut #droite h4{
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+.footer-haut #droite .icons{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin-bottom: 50px;
+}
+.icons i{
+    margin: 0 10px;
+}
+.footer-bas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    height: 60px;
+}
+.revient{
+    padding: 5px 20px;
+    font-size: 36px;
+}
+.revient a{
+    text-decoration: none;
+    color: #31ab60;
+}
+.revient a:hover{
+    text-decoration: underline;
+    color: #944;
+}
+/* partie media querries */
+@media screen and (max-width: 850px)
+{
+    /* navigation bar  */
+    .navbar{
+        justify-content: space-between;
+    }
+    .menu-bar{
+        height: 100px;
+    }
+    #ouvre , #ferme{
+        display: block;
+        font-size: 28px;
+        color: #f3f3f3;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    #ouvre{
+        margin-right: 20px;
+    }
+    #ouvre:hover , #ferme:hover{
+        color: #4ee678;
+    }
+    .menu-bar{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        height: 350px;
+        background-color: rgba(78, 230, 120,0.4);
+        box-shadow: 0 0 20px black;
+        transition: 0.7s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #menuB:checked ~ .menu-bar{
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    } 
+    #menuB:checked + #ouvre{
+        visibility: hidden;
+    }  
+    #menuB:checked ~ .menu1{
+        display: none;
+    }
+    #ferme{
+        position: absolute;
+        top: 6px;
+        left: 12px;
+    }
+    /* fin navigation bar  */
+    /* zone titre */
+        .main .titre h1{
+            font-size: 25px;
+        }
+        .main .titre h5{
+            font-size: 12px;
+        }
+        .titre{
+            display: none;
+        }
+    /* fin zone titre */
+    /* partie menu  */
+    .menu1{
+        width: 80%;
+        left: 10%;
+     }
+    /* fin menu  */
+    /*partie boite*/
+    .boite{
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center
+    }
+    .boite div h1{
+        margin-bottom: 20px;
+        color: #444;
+    }
+    .boite img{
+        width: 320px;
+        height: 300px;
+    }
+    #plantes{
+        padding: 30px 30px;
+        height: 700px;
+    }
+    #plantes img ,#plantes .text-plantes{
+        position: static;
+        height: 50%;
+    }
+    #plantes .text-plantes{
+        height: 40%;
+    }
+    #plantes:hover img ,#plantes:hover .text-plantes{
+        transform: translateX(0);
+    }
+     /*fin partie boite*/
+     /* partie definition herbes monocotylédones dicotylédones */
+#mono , #dico{
+    padding: 0 0;
+}
+#mono .container-mono , #dico .container-dico{
+    flex-direction: column-reverse;
+}
+#mono img , #dico img{
+    width: 100%;
+}
+.text-mono , .text-dico{
+    padding: 0px 0px;
+    width: 100%;
+}
+#mono h1 ,#dico h1{
+    font-size: 28px;
+}
+/* FIN partie definition herbes monocotylédones / dicotylédones */
+    /* Tableau */
+    table{
+        width: 90%;
+        border-spacing: 0;
+    
+    }
+    /* FIN Tableau */
+    .mauv-adv{
+        width: 90%;
+    }
+    .video{
+        height: 350px;
+    }
+    .racine{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 40px 20px;
+        margin-bottom: 50px;
+    }
+    .racine div{
+        width: 90%;
+        margin: auto;
+    }
+}
+/* fin media querries */
