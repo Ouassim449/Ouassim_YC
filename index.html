@@ -28,7 +28,7 @@
             <nav class="navbar">
                 <div class="logo">
                     <img src="imgs/Logo.png" alt="Logo du site">
-                    <h1>Ouassim</h1>
+                    <h1>CodeCrafters</h1>
                 </div>
                 <input type="checkbox" id="menuB">
                 <label for="menuB" id="ouvre"><i class="fa-solid fa-bars"></i></label>
@@ -42,7 +42,7 @@
             </nav>
             <!-- Le partie centrer du titre -->
                 <div class="titre">
-                   <h4>Bienvenue Avec Ouassim Derja</h4>
+                   <h4>Bienvenue Avec CodeCrafters</h4>
                    <h1>Espèse Des Mauvaises Herbes</h1>
                    <h5>Notre page web avec tout ce que vous cherchez à propos les mauvaises herbes</h5>
                 </div>
@@ -234,6 +234,23 @@
             </div>
         </footer>
                 <!-- FIN partie Footer  -->
+    <script>
+     // Smooth scrolling with easing function
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            // Smooth scroll animation
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });         
+    </script>
     </div>
 </body>
 </html>

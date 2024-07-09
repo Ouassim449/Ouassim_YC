@@ -435,7 +435,7 @@ footer{
     color: #944;
 }
 /* partie media querries */
-@media screen and (max-width: 850px)
+@media screen and (max-width: 850px) and (min-width: 550px)
 {
     /* navigation bar  */
     .navbar{
@@ -579,5 +579,158 @@ footer{
         width: 90%;
         margin: auto;
     }
+}
+@media screen and (max-width:549px)
+{
+        /* navigation bar  */
+        .navbar{
+            justify-content: space-between;
+        }
+        .menu-bar{
+            height: 100px;
+        }
+        #ouvre , #ferme{
+            display: block;
+            font-size: 28px;
+            color: #f3f3f3;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #ouvre{
+            margin-right: 20px;
+        }
+        #ouvre:hover , #ferme:hover{
+            color: #4ee678;
+        }
+        .menu-bar{
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: -100%;
+            height: 350px;
+            background-color: rgba(78, 230, 120,0.4);
+            box-shadow: 0 0 20px black;
+            transition: 0.7s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #menuB:checked ~ .menu-bar{
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        } 
+        #menuB:checked + #ouvre{
+            visibility: hidden;
+        }  
+        #menuB:checked ~ .menu1{
+            display: none;
+        }
+        #ferme{
+            position: absolute;
+            top: 6px;
+            left: 12px;
+        }
+        /* fin navigation bar  */
+        /* zone titre */
+            .titre{
+                display: none;
+            }
+        /* fin zone titre */
+        /* partie menu  */
+        .menu1{
+            width: 100%;
+            left: 0;
+         }
+         .menu1 .menu-icon i{
+            font-size: 32px;
+         }
+        /* fin menu  */
+        /*partie boite*/
+        .boite{
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+        }
+        .boite div h1{
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .boite img{
+            width: 250px;
+            height: 240px;
+        }
+        #plantes{
+            padding: 30px 30px;
+            height: 700px;
+        }
+        #plantes img ,#plantes .text-plantes{
+            position: static;
+            height: 45%;
+            width: 90%;
+        }
+        #plantes .text-plantes{
+            height: 40%;
+        }
+        #plantes:hover img ,#plantes:hover .text-plantes{
+            transform: translateX(0);
+        }
+         /*fin partie boite*/
+         /* partie definition herbes monocotylédones dicotylédones */
+    #mono , #dico{
+        padding: 0 0;
+    }
+    #mono .container-mono , #dico .container-dico{
+        flex-direction: column-reverse;
+    }
+    #mono img , #dico img{
+        width: 100%;
+    }
+    .text-mono , .text-dico{
+        padding: 0px 0px;
+        width: 100%;
+    }
+    #mono h1 ,#dico h1{
+        font-size: 28px;
+    }
+    /* FIN partie definition herbes monocotylédones / dicotylédones */
+        /* Tableau */
+        table{
+            width: 95%;
+            border-spacing: 0;
+        
+        }
+        table tr th{
+            padding: 0;
+            font-size: 20px;
+        }
+        table h3{
+            font-size: 18px;
+        }
+        table tr th p{
+            font-size: 13px;
+        }
+        /* FIN Tableau */
+        .mauv-adv{
+            width: 90%;
+        }
+        .video{
+            height: 350px;
+        }
+        .racine{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px;
+            margin-bottom: 50px;
+        }
+        .racine div{
+            width: 90%;
+            margin: auto;
+        }
 }
 /* fin media querries */
