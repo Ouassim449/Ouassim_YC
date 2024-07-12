@@ -1,4 +1,4 @@
-RESOURCE:
+RESOURCES :
 icons : https://fontawesome.com
 font : https://fonts.google.com
 image-compressor : https://imagecompressor.com
